@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductKeepingApp.MainPage"
+             Title="Товары">
+
+    <StackLayout>
+        <Button Text="Сменить источник" x:Name="SwitchSource" Clicked="SwitchSource_Clicked"/>
+        <ListView x:Name="ProductShowListview" Margin="25">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Path=ProductBarcode}"/>
+                            <Label Text="{Binding Path=ProductName}"/>
+                            <Label Text="{Binding Path=ProductExpirationDate}"/>
+                            <Label Text="{Binding Path=ProductManufactureDate}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
